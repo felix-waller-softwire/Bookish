@@ -9,10 +9,23 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @method = :post
   end
 
   def create
     @book = Book.create(params.require(:book).permit(:title, :author, :isbn))
+    redirect_to book_url(@book)
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+    @method = :patch
+    render :new
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.update(params.require(:book).permit(:title, :author, :isbn))
     redirect_to book_url(@book)
   end
 
