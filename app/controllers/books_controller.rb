@@ -9,7 +9,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @method = :post
   end
 
   def create
@@ -19,8 +18,6 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    @method = :patch
-    render :new
   end
 
   def update

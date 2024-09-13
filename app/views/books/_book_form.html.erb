@@ -1,0 +1,9 @@
+<%= form_with model: @book do |form| %>
+  <%= form.label :title, 'Title' %>
+  <%= form.text_field :title %>
+  <%= form.label :author, 'Author' %>
+  <%= form.text_field :author %>
+  <%= form.label :isbn, 'ISBN' %>
+  <%= form.text_field :isbn %>
+  <%= form.submit %>
+<% end %>
