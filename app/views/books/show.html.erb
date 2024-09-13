@@ -1,5 +1,11 @@
 <h1><%= @book.title %></h1>
+
 <%= link_to 'Books', books_path %>
+<%= link_to 'Delete', @book, data: {
+	turbo_method: :delete,
+	turbo_confirm: 'Are you sure?'
+}%>
+
 <h2>copies</h2>
 <ul>
 	<% @book.copies.each do |copy| %>

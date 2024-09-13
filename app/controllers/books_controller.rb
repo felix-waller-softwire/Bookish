@@ -15,4 +15,9 @@ class BooksController < ApplicationController
     @book = Book.create(params.require(:book).permit(:title, :author, :isbn))
     redirect_to book_url(@book)
   end
+
+  def destroy
+    Book.find(params[:id]).destroy
+    redirect_to books_url
+  end
 end
