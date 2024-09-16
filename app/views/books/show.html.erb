@@ -1,0 +1,8 @@
+<h1><%= @book.title %></h1>
+<%= link_to 'Books', books_path %>
+<h2>copies</h2>
+<ul>
+	<% @book.copies.each do |copy| %>
+		<li><%= copy.borrower %></li>
+	<% end %>
+</ul>
